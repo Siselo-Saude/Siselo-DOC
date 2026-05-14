@@ -48,42 +48,6 @@ A documentacao esta organizada da seguinte forma:
 
 ---
 
-## Integracao Local com Docker
-
-O repositorio `Siselo-DOC` tambem e o ponto central de integracao local dos demais repositorios do projeto.
-
-O arquivo `docker-compose.yml` deste repositorio orquestra:
-
-- `db` - banco MySQL compartilhado
-- `users` - backend principal
-- `admin` - modulo administrativo
-- `frontend` - interface web
-- `doc` - documentacao do projeto
-
-### Como subir tudo
-
-Dentro da pasta `Siselo-DOC`, execute:
-
-```bash
-docker compose up --build
-```
-
-### Portas usadas
-
-- `users` - `http://localhost:18086`
-- `admin` - `http://localhost:18081`
-- `frontend` - `http://localhost:13000`
-- `doc` - `http://localhost:18082`
-
-### Observacoes
-
-- o banco `db` nao e exposto para fora do Docker, evitando conflito de porta local
-- o `Siselo-DOC` fica responsavel por integrar os repositorios sem depender da pasta agregadora `Siselo - Saude`
-- o `Siselo-Users` ainda pode manter um `docker-compose.yml` proprio para uso isolado, se necessario
-- o `frontend` foi configurado de forma tolerante no compose para nao derrubar a stack enquanto esse repositorio ainda estiver incompleto
-
----
-
 ## Licenca
 
 Este projeto esta licenciado sob a Apache License 2.0.
